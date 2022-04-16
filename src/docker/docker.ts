@@ -76,7 +76,7 @@ export class Docker {
       };
 
     const output_format = `'{"id":"{{ .ID }}", "image": "{{ .Image }}", "name":"{{ .Names }}"}'`;
-    const command = `docker ps --format ${output_format}`;
+    const command = `docker ps --filter status=running --format ${output_format}`;
 
     const output = execSync(command);
     const output_toString = output.toString();
