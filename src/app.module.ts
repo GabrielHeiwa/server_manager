@@ -6,10 +6,12 @@ import { Docker } from './docker/docker';
 import { ManagerController } from './manager/manager.controller';
 import { ManagerService } from './manager/manager.service';
 import { OwnServer } from './own_server/own_server';
+import { Telnet } from './telnet';
+import { Ssh } from './ssh';
 
 @Module({
   imports: [],
   controllers: [AppController, ManagerController],
-  providers: [AppService, Docker, DigitalOcean, ManagerService, OwnServer],
+  providers: [AppService, Docker, DigitalOcean, ManagerService, OwnServer, Telnet, Ssh],
 })
 export class AppModule {}
